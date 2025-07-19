@@ -10,7 +10,7 @@ from googleapiclient.errors import HttpError
 SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
 
 # The ID of a sample document.
-DOCUMENT_ID = "e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq"
+DOCUMENT_ID = "195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE"
 
 PUBLISHED_URL = "https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub"
 TEXT_EXPORT_URL = PUBLISHED_URL.replace("/pub", "/export?format=txt")
@@ -42,7 +42,7 @@ def main():
     service = build("docs", "v1", credentials=creds)
 
     # Retrieve the documents contents from the Docs service.
-    document = service.documents().get(documentId=TEXT_EXPORT_URL).execute()
+    document = service.documents().get(documentId=DOCUMENT_ID).execute()
 
     
 
